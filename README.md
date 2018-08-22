@@ -7,15 +7,22 @@ One doctor has many patients, with many appointments.
 PATIENT
 Name - string
 Number - 10 numbers
-Condition?
+Age
+Gender
 One patient may have multiple doctors, with many appointments.
 
+CONDITION
+Name
+Description
+Urgency/Priority? Colored labels
+Date diagnosed
+A patient may have multiple conditions.
+
 APPOINTMENT
-Date
-Time
+Date/Time
 Patient
 Doctor
-Reason?
+Reason
 
 This project is a patient management system, that allows patients to search for doctors and make appointments with them using an online calendar. Doctors can accept or deny appointments, as well as see  previous appointments that they have attended with patients.
 This project makes use of React, Node, Mongo, Jest, TravisCI, Mocha, Chai, Heroku, and Netlify.
