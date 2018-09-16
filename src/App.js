@@ -14,6 +14,7 @@ import CreateAppointment from './appointments/create-appointment';
 import Condition from './conditions/condition';
 import ConditionsList from './conditions/conditions-list';
 import CreateCondition from './conditions/create-condition';
+import Login from './Login';
 
 class App extends Component {
   render() {
@@ -21,24 +22,18 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">React Capstone</h1>
-            <ul>
+            <h1 className="App-title">FindDoc</h1>
+            <ul className="nav-links">
               <li><Link to="/patients">Patients</Link></li>
-              <li><Link to="/create-patient">Create Patient</Link></li>
               <li><Link to="/doctors">Doctors</Link></li>
-              <li><Link to="/create-doctor">Create Doctor</Link></li>
               <li><Link to="/appointments">Appointments</Link></li>
-              <li><Link to="/create-appointment">Create Appointment</Link></li>
-              <li><Link to="/conditions">Conditions</Link></li>
-              <li><Link to="/create-condition">Create Condition</Link></li>
+              <li><Link to="/conditions">Profile</Link></li>
+              <li><Link to="/login">Login</Link></li>
             </ul>
           </header>
-          <p className="App-intro">
-            <br/>
-          </p>
 
           <Switch>
+            <Route path="/login" component={Login}/>
             <Route path="/patients" exact component={PatientsList}/>
             <Route path="/patients/:id" component={Patient}/>
             <Route path="/create-patient" component={CreatePatient}/>
