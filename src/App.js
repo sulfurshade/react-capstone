@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'normalize.css';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Patient from './patients/patient';
 import PatientsList from './patients/patients-list';

@@ -29,8 +29,11 @@ class PatientsList extends Component {
   render () {
     let patientCards = this.state.patients.map(patient => {
       return (
-        <div key={ patient.number }>
-          <PatientCard name={ patient.name } number={ patient.number } age={ patient.age } gender={ patient.gender }></PatientCard>
+        <div key={ patient.number } className="patient-cards">
+          <span className="title-text">Name: </span><PatientCard name={ patient.name }></PatientCard>
+          <span className="title-text">Number: </span><PatientCard number={ patient.number }></PatientCard>
+          <span className="title-text">Age: </span><PatientCard number={ patient.age }></PatientCard>
+          <span className="title-text">Gender: </span><PatientCard number={ patient.gender }></PatientCard>
         </div>
       )
     });

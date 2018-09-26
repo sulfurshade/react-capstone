@@ -29,7 +29,7 @@ class DoctorsList extends Component {
   render () {
     let doctorCards = this.state.doctors.map(doctor => {
       return (
-        <div key={ doctor.number }>
+        <div key={ doctor.number } className="doctor-cards">
           <DoctorCard name={ doctor.name } number={ doctor.number } practice={ doctor.practice }></DoctorCard>
         </div>
       )

@@ -29,7 +29,7 @@ class ConditionsList extends Component {
   render () {
     let conditionCards = this.state.conditions.map(condition => {
       return (
-        <div>
+        <div key={ condition.id }>
           <ConditionCard name={ condition.name } description={ condition.description } urgency={ condition.urgency } date={ condition.date }></ConditionCard>
         </div>
       )

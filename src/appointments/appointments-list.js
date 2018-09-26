@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import AppointmentCard from './appointment-card';
+import Calendar from 'react-calendar';
 
 class AppointmentsList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      appointments: []
+      appointments: [],
+      date: new Date()
     };
   }
   componentDidMount () {
@@ -26,10 +28,17 @@ class AppointmentsList extends Component {
     })
     .catch(err => console.error('Invalid credentials', err));
   }
+
+  onChange = date => this.setState({ date })
+
   render () {
     let appointmentCards = this.state.appointments.map(appointment => {
       return (
-        <div>
+        <div className="appointment-cards">
+          <span className="calendar"><Calendar
+            onChange={this.onChange}
+            value={this.state.date}
+          /></span>
           <AppointmentCard date={ appointment.date } patient={ appointment.patient } doctor={ appointment.doctor } reason={ appointment.reason }></AppointmentCard>
         </div>
       )
