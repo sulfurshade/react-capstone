@@ -1,5 +1,6 @@
 .App {
-
+  width: 80%;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -66,22 +67,25 @@
   box-shadow: none;
 }
 
-.patient-cards {
+.patient-cards, .doctor-cards {
   text-align: left;
-  padding: 5px 5px 0px 5px;
-  border-left: 6px solid blue;
-  background-color: lightblue;
+  padding: 5px;
   width: 40%;
   margin: 20px auto 20px auto;
 }
 
+.patient-cards p, .doctor-cards p {
+  padding: 0.2em;
+}
+
+.patient-cards {
+  border-left: 6px solid blue;
+  background-color: lightblue;
+}
+
 .doctor-cards {
-  text-align: left;
-  padding: 5px;
   border-left: 6px solid red;
   background-color: pink;
-  width: 40%;
-  margin: 20px auto 20px auto;
 }
 
 .appointment-cards {

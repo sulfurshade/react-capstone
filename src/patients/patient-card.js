@@ -4,10 +4,10 @@ class PatientCard extends Component {
   render() {
     return (
       <div>
-        <h3>{ this.props.name }</h3>
-        <p>{ this.props.number }</p>
-        <p>{ this.props.age }</p>
-        <p>{ this.props.gender }</p>
+        <span className="title-text">Name: </span><p>{ this.props.name }</p>
+        <span className="title-text">Number: </span><p>{ this.props.number }</p>
+        <span className="title-text">Age: </span><p>{ this.props.age }</p>
+        <span className="title-text">Gender: </span><p>{ this.props.gender }</p>
       </div>
     );
   }
