@@ -46,6 +46,7 @@ class AppointmentsList extends Component {
       }
     })
     .then(rawResponse => {
+      console.log("raw response:", rawResponse);
       return rawResponse.json();
     })
     .then(response => {
@@ -58,26 +59,36 @@ class AppointmentsList extends Component {
   onChange = date => this.setState({ date })
 
   render () {
-    let appointmentCards = this.state.appointments.map((appointment, i) => {
+    console.log('called from appointment render');
+    console.log(this.state.appointments);
+    if (this.state.appointments && this.state.appointments.constructor == Array) {
+      let appointmentCards = this.state.appointments.map((appointment, i) => {
+        return (
+          <div className="appointment-cards" key={i}>
+            <AppointmentCard date={ appointment.date } patient={ appointment.patient } doctor={ appointment.doctor } reason={ appointment.reason }></AppointmentCard>
+          </div>
+        )
+      });
       return (
-        <div className="appointment-cards" key={i}>
-          <AppointmentCard date={ appointment.date } patient={ appointment.patient } doctor={ appointment.doctor } reason={ appointment.reason }></AppointmentCard>
+        <div>
+        <Calendar
+          onChange={this.onChange}
+          value={this.state.date}
+          minDetail="month"
+          onClickDay={this.renderAppointmentsForDay}
+        />
+          {appointmentCards}
+
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          No Appointments
         </div>
       )
-    });
-    console.log('called from appointment render');
-    return (
-      <div>
-      <Calendar
-        onChange={this.onChange}
-        value={this.state.date}
-        minDetail="month"
-        onClickDay={this.renderAppointmentsForDay}
-      />
-        {appointmentCards}
+    }
 
-      </div>
-    );
   }
 }
 
