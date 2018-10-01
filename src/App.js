@@ -16,8 +16,13 @@ import Condition from './conditions/condition';
 import ConditionsList from './conditions/conditions-list';
 import CreateCondition from './conditions/create-condition';
 import Login from './Login';
+import  { Redirect } from 'react-router-dom'
 
 class App extends Component {
+  logout() {
+    window.localStorage.removeItem('token');
+    window.location.pathname = "/login";
+  }
   render() {
     return (
       <Router>
@@ -30,6 +35,7 @@ class App extends Component {
               <li><Link to="/appointments">Appointments</Link></li>
               <li><Link to="/conditions">Profile</Link></li>
               <li><Link to="/login">Login</Link></li>
+              <li><button onClick={this.logout}>Logout</button></li>
             </ul>
           </header>
 

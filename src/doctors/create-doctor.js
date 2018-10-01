@@ -8,7 +8,7 @@ export class CreateDoctor extends React.Component {
   }
 
   handleSubmit(values) {
-    var token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     return fetch('http://localhost:8080/doctors', {
       method: 'POST',
       body: JSON.stringify(values),
