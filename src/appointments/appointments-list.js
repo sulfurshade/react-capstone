@@ -76,6 +76,7 @@ class AppointmentsList extends Component {
           value={this.state.date}
           minDetail="month"
           onClickDay={this.renderAppointmentsForDay}
+          className="appointment-calendar"
         />
           {appointmentCards}
 

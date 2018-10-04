@@ -1,3 +1,7 @@
+html {
+  background-color: #F5F5F5;
+}
+
 .App {
   width: 80%;
   margin: 0 auto;
@@ -15,7 +19,9 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
+  font-family: 'Fredoka One', cursive;
+  color: #3b656b;
 }
 
 .App-intro {
@@ -33,25 +39,39 @@
 }
 
 .nav-links li a, .nav-links li a:visited {
-  color: #63f853;
+  color: 	#4d8596;
   text-decoration: none;
+  padding: 4px 6px 4px 6px;
 }
 
 .nav-links li a:hover {
-  text-decoration: underline;
+  color: #FFF;
+  border-radius: 5px;
+  background-color: 	#4d8596;
+}
+
+.nav-links button {
+  color: #FFF;
+  padding: 4px 6px 4px 6px;
+  border-radius: 5px;
+  background-color: 	#4d8596;
 }
 
 .form-wrapper form {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 .form-wrapper form button {
   width: 30%;
   border-radius: 5px;
   box-shadow: none;
+  color: black;
+  background-color: #63f853;
 }
 
 .form-wrapper form .actions {
@@ -67,7 +87,23 @@
   box-shadow: none;
 }
 
+.form-wrapper form div {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
 .patient-cards, .doctor-cards {
+  text-align: left;
+  padding: 5px;
+  width: 64%;
+  margin: 20px auto 20px auto;
+}
+
+.appointment-cards {
   text-align: left;
   padding: 5px;
   width: 40%;
@@ -84,16 +120,22 @@
 }
 
 .doctor-cards {
-  border-left: 6px solid red;
-  background-color: pink;
+  border-left: 6px solid #4d8596;
+  background-color: #c3e7db;
+}
+
+.doctor-cards h3 {
+  font-size: 1.5em;
 }
 
 .appointment-cards {
   margin-left: 10%;
   margin-right: auto;
+  border-left: 6px solid green;
+  background-color: lightgreen
 }
 
-.appointment-cards .calendar {
+.appointment-calendar {
   float: right;
   margin-left: auto;
   margin-right: 10%;
@@ -102,4 +144,12 @@
 .title-text {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.doctor-card h3, .doctor-card p {
+  padding-left: 10px;
+}
+
+.doctor-card i {
+  padding-right: 10px;
 }

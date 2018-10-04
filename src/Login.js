@@ -32,11 +32,13 @@ export class Login extends React.Component {
     return (
       <div className="form-wrapper">
         <form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
-          <label htmlFor="username">Username</label>
-          <Field name="username" id="username" type="text" component="input" />
-          <label htmlFor="password">Password</label>
-          <Field name="password" id="password" type="password" component="input" />
-          <div className="actions"><button type="submit">Login</button></div>
+          <div>
+            <label htmlFor="username">Username</label>
+            <Field name="username" id="username" type="text" component="input" />
+            <label htmlFor="password">Password</label>
+            <Field name="password" id="password" type="password" component="input" />
+            <div className="actions"><button type="submit">Login</button></div>
+          </div>
         </form>
       </div>
     );
